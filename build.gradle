@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'application'
+    id 'jacoco'
+    id 'io.franzbecker.gradle-lombok' version '3.1.0'
+}
+
+group 'au.com.toy.simulator'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //compile 'org.codehaus.groovy:groovy-all:${groovyVersion}@pom'
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}@pom"
+   // compile 'org.projectlombok:lombok:${lombokVersion}'
+   // testCompile 'org.spockframework:spock-core:${spockVersion}'
+   testCompile "org.spockframework:spock-core:${spockVersion}"
+}
+
+lombok {
+    version = "$lombokVersion"
+    sha256 = ""
+}
+
+
+mainClassName = 'au.com.toy.simulator.MainClass'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'au.com.toy.simulator.MainClass'
+    }
+}
