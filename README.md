@@ -123,3 +123,9 @@ $ gradlew jacocoTestReport
 Outputs a code coverage report to `build/reports/jacoco/test/html/index.html`.
 
 
+### Exit the CLI
+Type `exit` or `EXIT` to exit from the CLI application.
+
+```
+exit
+```

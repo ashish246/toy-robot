@@ -1,7 +1,5 @@
 package au.com.toy.simulator.commands;
 
-import static java.lang.Runtime.getRuntime;
-
 import au.com.toy.simulator.MainClass;
 import au.com.toy.simulator.model.Position;
 import au.com.toy.simulator.model.TableTop;
