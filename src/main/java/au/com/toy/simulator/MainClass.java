@@ -18,7 +18,7 @@ import lombok.val;
  */
 public class MainClass {
 
-	private static volatile boolean exit;
+	public static volatile boolean exit;
 
 	public static void main(String[] args) {
 
@@ -40,6 +40,7 @@ public class MainClass {
 					Optional<ICommand> command = ICommand.of(cmdLine);
 
 					if (!command.isPresent()) {
+						System.out.print(format("%s is not a valid command. \n", cmdLine));
 						continue;
 					}
 
@@ -54,6 +55,8 @@ public class MainClass {
 					Optional<ToyRobot> newToyRobot = Optional.empty();
 					if (toyRobot.isPresent() || !command.get().requiresToyRobot()) {
 						newToyRobot = command.map(executeCommand(tableTop, toyRobot.orElse(null)));
+					} else {
+						System.out.print(format("%s is not a valid first command. \n", cmdLine));
 					}
 
 					toyRobot = newToyRobot.isPresent() ? newToyRobot : toyRobot;

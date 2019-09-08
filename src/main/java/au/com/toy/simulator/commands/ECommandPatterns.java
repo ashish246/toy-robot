@@ -16,7 +16,8 @@ public enum ECommandPatterns {
 	MOVE("(?i)MOVE$", s -> new MoveCommand()), 
 	LEFT("(?i)LEFT$", s -> new LeftCommand()),
 	RIGHT("(?i)RIGHT$", s -> new RightCommand()), 
-	REPORT("(?i)REPORT$", s -> new ReportCommand());
+	REPORT("(?i)REPORT$", s -> new ReportCommand()),
+	EXIT("(?i)EXIT$", s -> new ExitCommand());
 
 	@Getter
 	private final String regex;
